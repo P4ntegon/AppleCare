@@ -1,0 +1,59 @@
+:root {
+    --oak-wood: #EAE3D2;
+    --apple-silver: #F5F5F7;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #d1d1d1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Section Smooth Transitions */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Service Card Hover Effects */
+.service-card {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    background-color: #ffffff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+
+/* Custom Hero Mask */
+.hero-image-container {
+    mask-image: linear-gradient(to bottom, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent);
+}
+
+/* Responsive Navigation Fix */
+@media (max-width: 768px) {
+    .hero-image-container {
+        height: 350px;
+    }
+}
